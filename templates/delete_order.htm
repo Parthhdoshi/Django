@@ -1,0 +1,19 @@
+{%  extends 'main.htm' %}
+{% block content %}
+
+<br>
+<div class="row text-center ">
+	<div class="col-md">
+		<div class="card card-body">
+            <h5>Are you sure wo delete "{{item}}" ?</h5>
+
+            <form method="POST">
+                {% csrf_token %}
+                <a class="btn btn-warning" href="ads">Cancel</a>
+                <input class="btn btn-danger" type="submit" value="Confirm">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'main.htm' %}
+{% block content %}
+{% include 'status.htm' %}
+
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+						<tr>
+							<td><a class = "btn btn-md btn-info" href="{% url 'profile' user.id %}">view</a></td>
+							<td>{{customer.name}}</td>
+							<td>{{customer.phone}}</td>
+							
+						</tr>
+				<tr>
+					<th>Product</th>
+					<th>Category</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+				</tr>
+				{% for order in orders %}
+				<tr>
+					
+					<td>{{order.product}}</td>
+					<td>{{order.product.category}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{order.status}}</td>
+					<td>{{order.place}}</td>
+					
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
